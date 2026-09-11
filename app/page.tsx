@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Check, Clock3, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import heroImage from "@/public/urgent-dental-hero.png";
 
 const needs = ["Severe toothache", "Broken or chipped tooth", "Swelling or infection", "Lost filling or crown", "Dental injury", "Routine family care"];
 
@@ -10,7 +11,7 @@ export default function Home() {
   return <main className="practice-site"><SiteHeader/>
     <section className="home-intro">
       <div className="home-copy"><p className="local-label">Urgent dentist in Troy, Michigan</p><h1>Call us when your tooth can’t wait.</h1><p className="intro-copy">We help patients with painful, broken, or infected teeth and provide ongoing family dental care from our Rochester Road office.</p><div className="home-actions"><a className="solid-button" href="tel:+12488795858"><Phone/> Call the office</a><Link className="text-button" href="/contact">Request a call back <ArrowRight/></Link></div><div className="availability"><Clock3/><div><strong>Need to be seen today?</strong><span>Call first so our team can understand what happened and check availability.</span></div></div></div>
-      <div className="home-photo"><Image src="/urgent-dental-hero.png" alt="Concept image of a modern dental office reception" fill priority sizes="(max-width: 800px) 100vw, 50vw"/><span>Concept image — to be replaced with an approved office photo.</span></div>
+      <div className="home-photo"><Image src={heroImage} alt="Concept image of a modern dental office reception" fill priority sizes="(max-width: 800px) 100vw, 50vw"/><span>Concept image — to be replaced with an approved office photo.</span></div>
     </section>
 
     <section className="need-panel"><div><p className="section-label">How we can help</p><h2>Dental problems we regularly evaluate</h2></div><div className="need-list">{needs.map(item=><div key={item}><Check/>{item}</div>)}</div><Link href="/emergency-dentist">See emergency dental care <ArrowRight/></Link></section>
