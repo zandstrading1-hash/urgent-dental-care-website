@@ -9,12 +9,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Building2, CalendarClock, ChevronDown, CircleHelp, Eye, FileText, Globe2, History, ImagePlus, LayoutDashboard, Megaphone, Menu, Plus, Save, Settings, Users } from "lucide-react";
+import { PreviewComingSoon } from "@/components/preview-coming-soon";
 
 const nav = [
   ["Overview", LayoutDashboard], ["Website", Globe2], ["Updates", Megaphone], ["Media", ImagePlus], ["Team", Users], ["History", History], ["Settings", Settings],
 ] as const;
 
 export default function Dashboard() {
+  if (process.env.NEXT_PUBLIC_CLIENT_PREVIEW === "true") return <PreviewComingSoon />;
+  return <DashboardEditor />;
+}
+
+function DashboardEditor() {
   const [active, setActive] = useState("Overview");
   const [facebook, setFacebook] = useState(true);
   const [instagram, setInstagram] = useState(true);

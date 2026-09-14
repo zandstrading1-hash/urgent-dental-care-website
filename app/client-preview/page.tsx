@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function ClientPreview() {
-  return <div className="client-only-preview"><Home /></div>;
+  return <div className="client-only-preview"><Home previewMode /></div>;
 }
