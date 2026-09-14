@@ -8,7 +8,7 @@ const display = Playfair_Display({ subsets: ["latin"], variable: "--font-display
 export const metadata: Metadata = {
   title: "Urgent Dental Care | Troy, Michigan",
   description: "Prompt, compassionate dental care for urgent concerns in Troy, Michigan.",
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: process.env.GITHUB_ACTIONS ? "/urgent-dental-care-website/favicon.svg" : "/favicon.svg" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
